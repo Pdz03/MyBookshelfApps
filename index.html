@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>My Bookshelf Apps</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button onclick="topFunction()" id="btnTop" title="Go to top">
+      <i class="fa fa-arrow-up"></i>
+    </button>
+    <header class="head_bar">
+      <section class="headtitle">
+        <h1 class="head_bar__title">
+          <i class="fa fa-book"></i> My Bookshelf Apps
+        </h1>
+      </section>
+      <section class="search_section">
+        <form id="searchBook">
+          <label for="searchBookTitle">Cari Judul Buku</label>
+          <input id="searchBookTitle" type="text" />
+          <button id="searchSubmit" type="submit">Cari</button>
+        </form>
+      </section>
+    </header>
+    <main>
+      <section class="edit_section" hidden>
+        <div id="edit">
+          <div id="editheader">
+            <h2>Edit Data Buku</h2>
+          </div>
+          <div id="editbody">
+            <form id="editBook">
+              <div class="input">
+                <label for="editBookTitle">Judul</label>
+                <input id="editBookTitle" type="text" required />
+              </div>
+              <div class="input">
+                <label for="editBookAuthor">Penulis</label>
+                <input id="editBookAuthor" type="text" required />
+              </div>
+              <div class="input">
+                <label for="editBookYear">Tahun</label>
+                <input id="editBookYear" type="number" required />
+              </div>
+              <div class="input_inline">
+                <label for="editBookIsComplete">Selesai dibaca</label>
+                <input
+                  id="editCompleted"
+                  name="editBookIsComplete"
+                  type="checkbox"
+                  onclick="completedChecker()"
+                />
+              </div>
+              <button id="edit-submit" type="submit" name="submit">
+                Simpan
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section class="input_section" id="addRead">
+        <h2>Masukkan Buku Baru</h2>
+        <form id="inputBook">
+          <input type="hidden" id="inputBookId" />
+          <div class="input">
+            <label for="inputBookTitle">Judul</label>
+            <input id="inputBookTitle" type="text" required />
+          </div>
+          <div class="input">
+            <label for="inputBookAuthor">Penulis</label>
+            <input id="inputBookAuthor" type="text" required />
+          </div>
+          <div class="input">
+            <label for="inputBookYear">Tahun</label>
+            <input id="inputBookYear" type="number" required />
+          </div>
+          <div class="input_inline">
+            <label for="inputBookIsComplete">Selesai dibaca</label>
+            <input
+              id="inputBookIsComplete"
+              name="inputBookIsComplete"
+              type="checkbox"
+              onclick="completedChecker()"
+            />
+          </div>
+          <button id="bookSubmit" type="submit" name="submit">
+            Masukkan Buku ke rak <span id="checker">Belum selesai dibaca</span>
+          </button>
+        </form>
+      </section>
+
+      <section class="book_shelf" id="belumDibaca">
+        <h2>Belum selesai dibaca</h2>
+
+        <div id="reads" class="book_list"></div>
+      </section>
+
+      <section class="book_shelf" id="sudahDibaca">
+        <h2>Selesai dibaca</h2>
+
+        <div id="completedread" class="book_list"></div>
+      </section>
+    </main>
+    <footer>Copyright &copy; Syaifudin Fendi Prasetyo, 2023</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
